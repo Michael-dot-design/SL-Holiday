@@ -1,0 +1,74 @@
+.slidershow{
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 500px;
+    text-align: center;
+    color: #fff;
+    /*溢出隐藏*/
+    overflow: hidden;
+}
+.slidershow ul{
+    padding: 0;
+    width: calc(900px * 3);
+    transition: 0.5s;
+}
+.slidershow li{
+    float: left;
+    width: 800px;
+    height: 500px;
+    list-style: none;
+    line-height: 500px;
+    font-size: 50px;
+}
+.slidershow li:nth-child(1){
+    background-image: url(./Holiday-images/轮播图3.jpg);
+}
+.slidershow li:nth-child(2){
+    background-image: url(./Holiday-images/轮播图1.jpg);
+}
+.slidershow li:nth-child(3){
+    background-image: url(./Holiday-images/轮播图2.jpg);
+}
+/*for属性值以indicator开头的所有label元素(指示器)*/
+.slidershow label[for^="indicator"]{
+    position: absolute;
+    top: 450px;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.slidershow label[for="indicator1"]{
+    left: 44%;
+}
+.slidershow label[for="indicator2"]{
+    left: 49%;
+}
+.slidershow label[for="indicator3"]{
+    left: 54%;
+}
+/*选中指示器设置ul的margin-left*/
+#indicator1:checked ~ ul{
+    margin-left: 0;
+}
+#indicator2:checked ~ ul{
+    margin-left: -800px;
+}
+#indicator3:checked ~ ul{
+    margin-left: -1600px;
+}
+/*选中指示器改变指示颜色*/
+#indicator1:checked ~ label[for="indicator1"]{
+    background-color: #fff;
+}
+#indicator2:checked ~ label[for="indicator2"]{
+    background-color: #fff;
+}
+#indicator3:checked ~ label[for="indicator3"]{
+    background-color: #fff;
+}
